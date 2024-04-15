@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>milo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>milo Maven Plugin</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.eclipse.milo/sdk-server -->
+    <dependency>
+      <groupId>org.eclipse.milo</groupId>
+      <artifactId>sdk-server</artifactId>
+      <version>0.6.12</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.eclipse.milo/dictionary-manager -->
+    <dependency>
+      <groupId>org.eclipse.milo</groupId>
+      <artifactId>dictionary-manager</artifactId>
+      <version>0.6.12</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.eclipse.milo/sdk-client -->
+    <dependency>
+      <groupId>org.eclipse.milo</groupId>
+      <artifactId>sdk-client</artifactId>
+      <version>0.6.12</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.4.14</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>22.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
